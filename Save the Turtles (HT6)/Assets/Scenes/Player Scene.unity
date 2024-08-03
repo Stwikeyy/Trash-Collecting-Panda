@@ -167,6 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trash: {fileID: 778080940}
+  num: 0
+  trashGenerated: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
