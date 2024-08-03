@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     public int trashCount = 0;
     
     public bool fishing = false;
-    private bool catching = false;
     public float coastline;
     private float fishingTime = 0;
     private float waitTime = 0;
@@ -35,8 +34,7 @@ public class PlayerController : MonoBehaviour
             if (!fishing) { // first instance, throw out line
                 fishingTime = 0;
                 fishing = true;
-                waitTime = 1 + UnityEngine.Random.Range(0.0f, 4.0f); // between 1 and 5 seconds
-
+                waitTime = 1 + UnityEngine.Random.Range(0.0f, 4.0f); // between 1-5 seconds
             } else { // fishing for fish
                 fishingTime += Time.deltaTime;
                 if (fishingTime >= waitTime) { // fish is being catched
