@@ -68,5 +68,7 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("Item")) {
             ++trashCount;
         }
+        if (collision.CompareTag("GarbageBasket")) trashCount = 0;
+        if (collision.CompareTag("UpgradeCenter")) trashCount = 0;
     }
 }

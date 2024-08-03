@@ -20,7 +20,6 @@ public class TrashGenerator : MonoBehaviour {
         if (num >= 1000 && trashGenerated <= 15) {
             createTrash(1);
             num = 0;
-            trashGenerated++;
         }
     }
 
@@ -29,6 +28,7 @@ public class TrashGenerator : MonoBehaviour {
             int xpos = Random.Range(-10, 10), ypos = Random.Range(-5, 5);
             GameObject trashClone = Instantiate(trash, new Vector3(xpos, ypos, 0), trash.transform.rotation);
             trashClone.layer = 0;
+            trashGenerated++;
         }
     }
 }
