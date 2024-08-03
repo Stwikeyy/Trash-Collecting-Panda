@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public Rigidbody2D rb2d;
     private Vector2 moveInput;
+    public int trashCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,15 @@ public class PlayerController : MonoBehaviour
 
         moveInput.Normalize();
 
-        rb2d.velocity = moveInput * moveSpeed;
+        rb2d.velocity = moveInput * (moveSpeed - trashCount);
     }
+
+    void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.CompareTag("Item")) {
+            ++trashCount;
+        }
+    }
+
+
 
 }
