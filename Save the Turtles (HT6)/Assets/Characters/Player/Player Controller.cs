@@ -15,10 +15,13 @@ public class PlayerController : MonoBehaviour
     private float fishingTime = 0;
     private float waitTime = 0;
 
+    public Sprite[] spriteArray;
+    public SpriteRenderer spriteRenderer;
+    public Sprite newSprite;
+
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
+        spriteRenderer.sprite = newSprite;
     }
 
     private void Update() {
@@ -26,8 +29,23 @@ public class PlayerController : MonoBehaviour
         moveInput.y = Input.GetAxisRaw("Vertical");
 
         moveInput.Normalize();
-
+        
         rb2d.velocity = moveInput * (moveSpeed - trashCount);
+
+        if (rb2d.velocity.x > 0) {
+            if (spriteRenderer.flipX) spriteRenderer.flipX = false;
+            spriteRenderer.sprite = spriteArray[1];
+        }
+        else if (rb2d.velocity.x < 0) {
+            if (!spriteRenderer.flipX) spriteRenderer.flipX = true;
+            spriteRenderer.sprite = spriteArray[1];
+        }
+        else if (rb2d.velocity.y > 0) {
+            spriteRenderer.sprite = spriteArray[0];
+        }
+        else {
+            spriteRenderer.sprite = spriteArray[2];
+        }
 
         // fishing mode
         if (transform.position.x >= coastline) {
