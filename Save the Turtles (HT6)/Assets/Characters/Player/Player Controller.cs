@@ -65,10 +65,11 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.CompareTag("Item")) {
-            ++trashCount;
-        }
-        if (collision.CompareTag("GarbageBasket")) trashCount = 0;
-        if (collision.CompareTag("UpgradeCenter")) trashCount = 0;
+        if (collision.CompareTag("Item")) ++trashCount;
+    }
+
+    void OnCollisionEnter2D(Collision2D col) {
+        if (col.gameObject.CompareTag("GarbageBasket")) trashCount = 0;
+        if (col.gameObject.CompareTag("UpgradeCenter")) trashCount = 0;
     }
 }
