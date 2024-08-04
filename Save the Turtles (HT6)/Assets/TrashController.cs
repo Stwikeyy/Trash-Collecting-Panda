@@ -6,6 +6,7 @@ public class TrashController : MonoBehaviour {
 
     public GameObject player;
     public int trashNum;
+    public GameObject trashGenerator;
 
     // Start is called before the first frame update
     void Start() {
@@ -22,6 +23,7 @@ public class TrashController : MonoBehaviour {
         if (collision.CompareTag("Player")) {
             List<int> lst = player.GetComponent<PlayerController>().trashes;
             lst.Add(trashNum);
+            trashGenerator.GetComponent<TrashGenerator>().trashGenerated--;
             Destroy(gameObject);
         }
     }
