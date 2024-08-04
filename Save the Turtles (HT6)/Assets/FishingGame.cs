@@ -61,11 +61,21 @@ public class FishingGame : MonoBehaviour
     public void unpause() {
         //SetActive(true); // some way to make it appear
         paused = false;
+        for(int i=0; i< transform.childCount; i++) {
+            for (int j = 0; j < transform.GetChild(i).childCount; j++) transform.GetChild(i).gameObject.transform.GetChild(j).gameObject.SetActive(true);
+            transform.GetChild(i).gameObject.SetActive(true);
+        }
+        gameObject.SetActive(true);
     }
 
     public void pause() {
         //SetActive(false); // some way to make it disappear
         paused = true;
+        for(int i=0; i< transform.childCount; i++) {
+            for (int j = 0; j < transform.GetChild(i).childCount; j++) transform.GetChild(i).gameObject.transform.GetChild(j).gameObject.SetActive(false);
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+        gameObject.SetActive(false);
     }
 
     void ProgressCheck() {
