@@ -72,7 +72,6 @@ public class FishingGame : MonoBehaviour
         Vector3 ls = progressBar.localScale;
         ls.y = progress;
         progressBar.localScale = ls;
-        print(progressBar.localScale);
 
         if (progress < 2 && Mathf.Abs(hook.position.y - fish.position.y) < 1) {
             progress += progressPower * Time.deltaTime;
@@ -82,6 +81,9 @@ public class FishingGame : MonoBehaviour
 
         if (progress > 2) {
             caught = true;
+            progress = 0;
+            ls.y = progress;
+            progressBar.localScale = ls;
             pause();
         }
     }
