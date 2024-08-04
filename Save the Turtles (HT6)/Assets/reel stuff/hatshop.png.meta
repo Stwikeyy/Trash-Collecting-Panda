@@ -1,6 +1,10 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: 6712039fe02f04a778e10a57dece65f3
+=======
+guid: 17df82e7ada02ef4a8f1796549fbb9d8
+>>>>>>> 8d08b768371aa8684612abab83a96d120ce912e8
 =======
 guid: 17df82e7ada02ef4a8f1796549fbb9d8
 >>>>>>> 8d08b768371aa8684612abab83a96d120ce912e8
@@ -98,7 +102,10 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 8d08b768371aa8684612abab83a96d120ce912e8
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
@@ -112,6 +119,9 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
+>>>>>>> 8d08b768371aa8684612abab83a96d120ce912e8
+=======
 >>>>>>> 8d08b768371aa8684612abab83a96d120ce912e8
   spriteSheet:
     serializedVersion: 2

@@ -1,6 +1,10 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: 74cf509c2540f4520896785de875debd
+=======
+guid: fb77196d9926f4846845fed81b46afaa
+>>>>>>> 8d08b768371aa8684612abab83a96d120ce912e8
 =======
 guid: fb77196d9926f4846845fed81b46afaa
 >>>>>>> 8d08b768371aa8684612abab83a96d120ce912e8
@@ -48,7 +52,11 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
 <<<<<<< HEAD
+<<<<<<< HEAD
   spriteMode: 1
+=======
+  spriteMode: 2
+>>>>>>> 8d08b768371aa8684612abab83a96d120ce912e8
 =======
   spriteMode: 2
 >>>>>>> 8d08b768371aa8684612abab83a96d120ce912e8
@@ -102,10 +110,13 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   spriteSheet:
     serializedVersion: 2
     sprites: []
 =======
+=======
+>>>>>>> 8d08b768371aa8684612abab83a96d120ce912e8
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
@@ -227,6 +238,9 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+<<<<<<< HEAD
+>>>>>>> 8d08b768371aa8684612abab83a96d120ce912e8
+=======
 >>>>>>> 8d08b768371aa8684612abab83a96d120ce912e8
     outline: []
     physicsShape: []
@@ -239,14 +253,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
 <<<<<<< HEAD
+<<<<<<< HEAD
     nameFileIdTable: {}
 =======
+=======
+>>>>>>> 8d08b768371aa8684612abab83a96d120ce912e8
     nameFileIdTable:
       bins_0: -674478704
       bins_1: 1638548073
       bins_2: -473427788
       bins_3: 503523318
       bins_4: 796955218
+<<<<<<< HEAD
+>>>>>>> 8d08b768371aa8684612abab83a96d120ce912e8
+=======
 >>>>>>> 8d08b768371aa8684612abab83a96d120ce912e8
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
