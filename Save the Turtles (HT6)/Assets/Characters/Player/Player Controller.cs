@@ -45,29 +45,35 @@ public class PlayerController : MonoBehaviour {
         }
         // fishing mode
         if (transform.position.x >= coastline) {
-            if (!fishing) { // first instance, throw out line 
-                if (!onTheLine) { // Only start fishing if fish isn't on the line
-                    fishingTime = 0;
-                    fishing = true;
-                    waitTime = 1 + UnityEngine.Random.Range(0.0f, 4.0f); // between 1-5 seconds
+            if (!fishing) { // First instance, throw out the line
+            print("Throw");
+                if (!onTheLine) { // Only start fishing if the fish isn't on the line
+                    fishingTime = 0; // Reset fishing time
+                    fishing = true; // Start fishing
+                    fishComponent.unCatch(); // remove previous catch
+                    waitTime = 1 + UnityEngine.Random.Range(0.0f, 4.0f); // Random wait time between 1-5 seconds
+                }
+            } else { // Fishing for fish on the line
+                fishingTime += Time.deltaTime; // Increment fishing time
+                print("Fishing");
+                if (fishingTime >= waitTime) { // If enough time has passed, fish is caught
+                    fishing = false; // Stop fishing
+                    onTheLine = true; // The fish is now on the line
+                    print("On the Line");
+                    if (fishComponent != null) {
+                        fishComponent.unpause(); // Resume fish behavior
+                    }
                 }
             }
-            else { // fishing for fish
-                fishingTime += Time.deltaTime;
-                if (fishingTime >= waitTime) { // fish is being caught
-                    fishing = false;
-                    onTheLine = true;
-                    if (fishComponent != null) fishComponent.unpause();
-                }
+            // Check if the fish is caught
+            if (fishComponent != null && fishComponent.isCaught()) {
+                print("Caught");
+                onTheLine = false; // The fish is no longer on the line
+                fishing = false;
+                fishComponent.pause(); // Pause fish behavior
             }
-        }
-        else {
+        } else { // Player is not in fishing mode
             fishing = false;
-            if (fishComponent != null) fishComponent.pause();
-        } // not in fishing mode
-
-        if (fishComponent.isCaught()) {
-            onTheLine = false;
             fishComponent.pause();
         }
     }

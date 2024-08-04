@@ -54,6 +54,9 @@ public class FishingGame : MonoBehaviour
     public bool isCaught() {
         return caught;
     }
+    public void unCatch() {
+        caught = false;
+    }
 
     public void unpause() {
         //objectRenderer.enabled = true;
@@ -79,7 +82,6 @@ public class FishingGame : MonoBehaviour
 
         if (progress > 2) {
             caught = true;
-            print("CAUHGT");
             pause();
         }
     }
