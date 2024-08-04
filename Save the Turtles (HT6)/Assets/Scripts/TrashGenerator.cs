@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class TrashGenerator : MonoBehaviour {
     
@@ -8,8 +9,12 @@ public class TrashGenerator : MonoBehaviour {
     public int num;
     public int trashGenerated;
 
+    public Sprite[] sprites;
+    public GameObject grass;
+
+    public GameObject player;
+
     // Start is called before the first frame update
-    
 
     void Start() {
         createTrash(10);
@@ -26,7 +31,22 @@ public class TrashGenerator : MonoBehaviour {
     void createTrash(int num) {
         for (int i = 0; i < num; i++) {
             int xpos = Random.Range(-10, 10), ypos = Random.Range(-5, 5);
-            GameObject trashClone = Instantiate(trash, new Vector3(xpos, ypos, 0), trash.transform.rotation);
+            int counter = 0;
+            while (true) {
+                xpos = Random.Range(-10, 10);
+                ypos = Random.Range(-5, 5);
+                counter++;
+                Tilemap collide = grass.GetComponent<Tilemap>();
+                if (counter == 10) print("hayday");
+                if (collide.HasTile(new Vector3Int(xpos, ypos, 0)) || counter == 10) {
+                    break;
+                }
+            }
+            GameObject trashClone = Instantiate(trash, new Vector3(xpos, ypos, -1), trash.transform.rotation);
+            int trashType = Random.Range(0, 6);
+            trashClone.GetComponent<SpriteRenderer>().sprite = sprites[trashType];
+            trashClone.GetComponent<TrashController>().trashNum = trashType;
+            trashClone.GetComponent<TrashController>().player = player;
             trashClone.layer = 0;
             trashGenerated++;
         }
