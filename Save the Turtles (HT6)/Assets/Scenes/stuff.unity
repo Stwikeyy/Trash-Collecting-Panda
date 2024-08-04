@@ -288,8 +288,7 @@ MonoBehaviour:
   moveSpeed: 5
   rb2d: {fileID: 314009115}
   trashCount: 0
-  fishing: 0
-  onTheLine: 0
+  state: 0
   coastline: 0
   fishComponent: {fileID: 1410332026}
   spriteArray:
@@ -7231,7 +7230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2022434160}
   - component: {fileID: 2022434161}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: FishMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7247,7 +7246,7 @@ Transform:
   m_GameObject: {fileID: 2022434159}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 5, z: -0.1}
+  m_LocalPosition: {x: 3, y: 5, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
