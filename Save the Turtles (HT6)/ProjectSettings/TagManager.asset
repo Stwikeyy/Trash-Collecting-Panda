@@ -10,6 +10,7 @@ TagManager:
   - Garbage
   - Recycle
   - Compost
+  - SharkHat
   layers:
   - Default
   - TransparentFX
