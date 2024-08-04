@@ -1969,7 +1969,7 @@ GameObject:
   - component: {fileID: 1783758597}
   - component: {fileID: 1783758596}
   m_Layer: 5
-  m_Name: Text (Legacy) (2)
+  m_Name: RequiredTrashPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2027,7 +2027,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Required Trash Points
+  m_Text: 'Required Trash Points: 50'
 --- !u!222 &1783758597
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4962,7 +4962,7 @@ GameObject:
   - component: {fileID: 1928427586}
   - component: {fileID: 1928427585}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: CurrentlyCarrying
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5020,7 +5020,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Currently Carrying:'
+  m_Text: 'Currently Carrying: 0'
 --- !u!222 &1928427586
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5204,7 +5204,7 @@ GameObject:
   - component: {fileID: 2025000923}
   - component: {fileID: 2025000922}
   m_Layer: 5
-  m_Name: Text (Legacy) (1)
+  m_Name: CurrentTrashPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5262,7 +5262,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Current Trash Points
+  m_Text: 'Current Trash Points: 0'
 --- !u!222 &2025000923
 CanvasRenderer:
   m_ObjectHideFlags: 0

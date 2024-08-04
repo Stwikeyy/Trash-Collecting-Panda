@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour {
 
     // for trashCapacity
     public List<int> trashes;
+    public int playerMaxCapacity;
 
     // Start is called before the first frame update
     void Start() {
@@ -128,7 +129,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.CompareTag("Item")) {
+        if (collision.CompareTag("Item") && playerMaxCapacity != trashCount) {
             ++trashCount;
             //trashes.Add(collision.gameObject.getComponent<TrashController>().trashType);
         }
