@@ -119,8 +119,8 @@ public class FishingGame : MonoBehaviour
             fishDestination = UnityEngine.Random.value;
         }
 
-
         fishPosition = Mathf.SmoothDamp(fishPosition, fishDestination, ref fishSpeed, smoothMotion);
         fish.position = Vector2.Lerp(bottomPivot.position, topPivot.position, fishPosition);
+        print(fish.position.y);
     }
 }
