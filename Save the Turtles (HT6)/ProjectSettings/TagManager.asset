@@ -7,6 +7,9 @@ TagManager:
   - Item
   - GarbageBasket
   - UpgradeCenter
+  - Garbage
+  - Recycle
+  - Compost
   layers:
   - Default
   - TransparentFX

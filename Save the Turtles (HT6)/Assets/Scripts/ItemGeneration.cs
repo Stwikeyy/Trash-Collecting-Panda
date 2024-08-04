@@ -11,7 +11,7 @@ public class ItemGeneration : MonoBehaviour {
     void Start() {
         //print(NextSceneInfo.num);
         for (int i = 0; i < NextSceneInfo.trashCan.Count; i++) {
-            int xpos = Random.Range(-10, 10), ypos = Random.Range(-5, 5);
+            float xpos = Random.Range(-8, 5), ypos = Random.Range(3, 4);
             GameObject trashClone = Instantiate(trash, new Vector3(xpos, ypos, -1), trash.transform.rotation);
             int trashType = NextSceneInfo.trashCan[i];
             trashClone.GetComponent<SpriteRenderer>().sprite = spriteArray[trashType];

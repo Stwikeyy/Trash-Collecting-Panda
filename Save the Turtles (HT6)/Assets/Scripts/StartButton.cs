@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
-public class NextScene : MonoBehaviour {
-
-    public static List<int> trashCan;
-
+public class StartButton : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         
@@ -15,12 +13,5 @@ public class NextScene : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         
-    }
-
-    void OnCollisionEnter2D(Collision2D col) {
-        GameObject obj = col.gameObject;
-        if (obj.CompareTag("Player")) {
-            SceneManager.LoadScene("Sorting Game");
-        }
     }
 }
