@@ -24,6 +24,6 @@ public class MousePosition : MonoBehaviour
     }
 
     void OnTriggerStay2D(Collider2D col) {
-        if (Input.GetMouseButtonDown(0)) SceneManager.LoadScene("Sorting Game");
+        if (Input.GetMouseButtonDown(0)) SceneManager.LoadScene("Player Scene");
     }
 }
