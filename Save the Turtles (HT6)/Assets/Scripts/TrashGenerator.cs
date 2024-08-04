@@ -12,6 +12,8 @@ public class TrashGenerator : MonoBehaviour {
     public Sprite[] sprites;
     public GameObject grass;
 
+    public GameObject player;
+
     // Start is called before the first frame update
 
     void Start() {
@@ -43,6 +45,8 @@ public class TrashGenerator : MonoBehaviour {
             GameObject trashClone = Instantiate(trash, new Vector3(xpos, ypos, -1), trash.transform.rotation);
             int trashType = Random.Range(0, 6);
             trashClone.GetComponent<SpriteRenderer>().sprite = sprites[trashType];
+            trashClone.GetComponent<TrashController>().trashNum = trashType;
+            trashClone.GetComponent<TrashController>().player = player;
             trashClone.layer = 0;
             trashGenerated++;
         }

@@ -335,6 +335,7 @@ MonoBehaviour:
   - {fileID: -1136012036, guid: 0c1ffad189fe4144e8f6ded657cf9e00, type: 3}
   - {fileID: -745062577, guid: 0c1ffad189fe4144e8f6ded657cf9e00, type: 3}
   grass: {fileID: 1845427331}
+  player: {fileID: 1927394382}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +553,7 @@ Transform:
   m_GameObject: {fileID: 778080940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.32, y: -4.42, z: -2}
+  m_LocalPosition: {x: -9.8, y: -4.33, z: -2}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -570,6 +571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8c17810730d47d5b3c61c0eca0d897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  trashNum: 0
 --- !u!1 &874125323
 GameObject:
   m_ObjectHideFlags: 0
@@ -3692,6 +3695,7 @@ MonoBehaviour:
   - {fileID: 579485060, guid: f37e4fadea19c1b4eba6c1e9cace3f34, type: 3}
   spriteRenderer: {fileID: 1927394388}
   newSprite: {fileID: 579485060, guid: f37e4fadea19c1b4eba6c1e9cace3f34, type: 3}
+  trashes: 
 --- !u!50 &1927394384
 Rigidbody2D:
   serializedVersion: 4
