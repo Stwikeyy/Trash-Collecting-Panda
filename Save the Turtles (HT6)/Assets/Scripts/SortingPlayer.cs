@@ -3,19 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour {
+public class SortingPlayer : MonoBehaviour {
 
     // for movement
     public float moveSpeed;
     public Rigidbody2D rb2d;
     private Vector2 moveInput;
     public int trashCount = 0;
-
-    // for fishing
-    public bool fishing = false;
-    public float coastline;
-    private float fishingTime = 0;
-    private float waitTime = 0;
 
     // for sprite rendering
     public Sprite[] spriteArray;
@@ -27,6 +21,8 @@ public class PlayerController : MonoBehaviour {
 
     // for trashCapacity
     public List<int> trashes;
+    public bool holdingTrash = false;
+    public int holdingTrashNum = 0;
 
     // Start is called before the first frame update
     void Start() {
@@ -40,23 +36,6 @@ public class PlayerController : MonoBehaviour {
             updateSprite();
             waiting = 0;
         }
-
-        // fishing mode
-        if (transform.position.x >= coastline) {
-            if (!fishing) { // first instance, throw out line
-                fishingTime = 0;
-                fishing = true;
-                waitTime = 1 + UnityEngine.Random.Range(0.0f, 4.0f); // between 1-5 seconds
-            } else { // fishing for fish
-                fishingTime += Time.deltaTime;
-                if (fishingTime >= waitTime) { // fish is being catched
-                    fishing = false;
-                    print("FISH!");
-                }
-            }
-        } else {
-            fishing = false;
-        } // not in fishing mode
     }
 
     void updateSpeed() {
@@ -65,7 +44,7 @@ public class PlayerController : MonoBehaviour {
 
         moveInput.Normalize();
         
-        rb2d.velocity = moveInput * (moveSpeed - trashCount);
+        rb2d.velocity = moveInput * moveSpeed;
 
         // 0 right, 1 left, 2 down, 3 up, 4 is idle
         if (rb2d.velocity.x > 0) curstate = 0;
