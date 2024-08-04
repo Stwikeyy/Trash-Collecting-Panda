@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d7327030911e18f4385d95d185e4e30f
+guid: fb77196d9926f4846845fed81b46afaa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: backwalkanim (1)_0
+      name: bins_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 209
-        height: 255
+        width: 166
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e02bb7237cd2ca34dbfaf47fde298ae7
-      internalID: 2016933485
+      spriteID: 8ebbf05e10d42364781e4920a1d6e4f7
+      internalID: -674478704
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: backwalkanim (1)_1
+      name: bins_1
       rect:
         serializedVersion: 2
-        x: 209
+        x: 166
         y: 0
-        width: 209
-        height: 255
+        width: 166
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cc52f31a14d20c459cef29560bf8b70
-      internalID: -1132969509
+      spriteID: c990e3fecc42767408080b729c281bc4
+      internalID: 1638548073
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: backwalkanim (1)_2
+      name: bins_2
       rect:
         serializedVersion: 2
-        x: 418
+        x: 332
         y: 0
-        width: 209
-        height: 255
+        width: 166
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63b90e728f4a6fb48b3dfa7756425b4a
-      internalID: -1870103333
+      spriteID: 076743c6721d92a41a4006406be162c2
+      internalID: -473427788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: backwalkanim (1)_3
+      name: bins_3
       rect:
         serializedVersion: 2
-        x: 627
+        x: 498
         y: 0
-        width: 209
-        height: 255
+        width: 166
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +187,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24369360d6549e847a18b96dd89af109
-      internalID: -584339343
+      spriteID: e3fa9710d26cc4a4a8b8d8ea7b4f77f8
+      internalID: 503523318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bins_4
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 0
+        width: 166
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601370cceb46e8e40b63a3832dcad828
+      internalID: 796955218
       vertices: []
       indices: 
       edges: []
@@ -204,10 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      backwalkanim (1)_0: 2016933485
-      backwalkanim (1)_1: -1132969509
-      backwalkanim (1)_2: -1870103333
-      backwalkanim (1)_3: -584339343
+      bins_0: -674478704
+      bins_1: 1638548073
+      bins_2: -473427788
+      bins_3: 503523318
+      bins_4: 796955218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
