@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour {
     // for trashCapacity
     public List<int> trashes;
     public int playerMaxCapacity;
+    public Text curPointsText;
 
     // Start is called before the first frame update
     void Start() {
@@ -131,6 +133,7 @@ public class PlayerController : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Item") && playerMaxCapacity != trashCount) {
             ++trashCount;
+            curPointsText.text = "Currently Carrying: " + trashCount.ToString();
             //trashes.Add(collision.gameObject.getComponent<TrashController>().trashType);
         }
     }

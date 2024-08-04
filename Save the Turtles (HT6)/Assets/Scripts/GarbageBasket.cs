@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GarbageBasket : MonoBehaviour {
 
@@ -8,6 +9,9 @@ public class GarbageBasket : MonoBehaviour {
     public int curPoints;
     public List<int> curTrash;
     public GameObject trashGenerator;
+
+    public Text currentlyCarrying;
+    public Text currentTrashPoints;
 
     // Start is called before the first frame update
     void Start() {
@@ -30,6 +34,8 @@ public class GarbageBasket : MonoBehaviour {
             scr.trashes.Clear();
             curPoints += scr.trashCount;
             scr.trashCount = 0;
+            currentlyCarrying.text = "Currently Carrying: 0";
+            currentTrashPoints.text = "Current Trash Points: " + curPoints.ToString();
         }
     }
 }

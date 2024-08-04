@@ -32,13 +32,15 @@ public class UpgradeCenter : MonoBehaviour {
             curPoints += scr.trashCount;
             scr.trashCount = 0;
             scr.trashes.Clear();
-            while (curPoints > r) {
+            currentlyCarrying.text = "Currently Carrying: 0";
+            int tmp = r - curPoints;
+            pointsToNextUpgrade.text = "Points to Next Upgrade: " + tmp.ToString();
+            while (curPoints >= r) {
                 curPoints -= r;
                 r *= 2;
                 maxCap++;
-                currentlyCarrying.text = "Currently Carrying: 0";
                 maxCapacity.text = "Max Capacity: " + maxCap.ToString();
-                int tmp = r - curPoints;
+                tmp = r - curPoints;
                 pointsToNextUpgrade.text = "Points to Next Upgrade: " + tmp.ToString();
                 scr.playerMaxCapacity = maxCap;
             }

@@ -372,8 +372,7 @@ MonoBehaviour:
   moveSpeed: 5
   rb2d: {fileID: 513615647}
   trashCount: 0
-  fishing: 0
-  onTheLine: 0
+  state: 0
   coastline: 0
   fishComponent: {fileID: 0}
   spriteArray:
@@ -395,6 +394,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 513615643}
   newSprite: {fileID: 579485060, guid: f37e4fadea19c1b4eba6c1e9cace3f34, type: 3}
   trashes: 
+  playerMaxCapacity: 0
+  curPointsText: {fileID: 0}
 --- !u!50 &513615647
 Rigidbody2D:
   serializedVersion: 4
@@ -2573,7 +2574,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Sorted Correctly: 0'
+  m_Text: 'Sorted Correctly: 50'
 --- !u!222 &1149141377
 CanvasRenderer:
   m_ObjectHideFlags: 0
