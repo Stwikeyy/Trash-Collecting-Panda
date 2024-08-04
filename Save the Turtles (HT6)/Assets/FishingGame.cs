@@ -59,12 +59,12 @@ public class FishingGame : MonoBehaviour
     }
 
     public void unpause() {
-        //objectRenderer.enabled = true;
+        //SetActive(true); // some way to make it appear
         paused = false;
     }
 
     public void pause() {
-        //objectRenderer.enabled = false;
+        //SetActive(false); // some way to make it disappear
         paused = true;
     }
 
@@ -100,12 +100,12 @@ public class FishingGame : MonoBehaviour
 
     void HookPhysics() {
         hookPullVelocity -= hookGravityPower;
-        if (hook.position.y < bottomPivot.position.y) {
+        if (hook.position.y < bottomPivot.position.y + 0.5f) {
             hookPullVelocity = 0;
-            hook.position = new Vector3(hook.position.x, bottomPivot.position.y, hook.position.z); // ensure position
-        } else if (hook.position.y > topPivot.position.y) {
+            hook.position = new Vector3(hook.position.x, bottomPivot.position.y + 0.5f, hook.position.z); // ensure position
+        } else if (hook.position.y > topPivot.position.y - 0.5f) {
             hookPullVelocity = 0;
-            hook.position = new Vector3(hook.position.x, topPivot.position.y, hook.position.z); // ensure position
+            hook.position = new Vector3(hook.position.x, topPivot.position.y - 0.5f, hook.position.z); // ensure position
         }
     }
 
