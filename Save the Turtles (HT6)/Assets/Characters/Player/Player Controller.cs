@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour {
     public int playerMaxCapacity;
     public Text curPointsText;
 
+    // shark hat
+    public GameObject shark;
+
     // Start is called before the first frame update
     void Start() {
         spriteRenderer.sprite = newSprite;
@@ -102,8 +105,15 @@ public class PlayerController : MonoBehaviour {
                 if (curSprite > 11) curSprite = 8;
             }
             else curSprite = 8;
-            if (curstate == 0 && spriteRenderer.flipX) spriteRenderer.flipX = false;
-            if (curstate == 1 && !spriteRenderer.flipX) spriteRenderer.flipX = true;
+            if (curstate == 0 && spriteRenderer.flipX) {
+                spriteRenderer.flipX = false;
+                //shark.GetComponent<SpriteRenderer>().flipX = false;
+            }
+            if (curstate == 1 && !spriteRenderer.flipX) {
+                spriteRenderer.flipX = true;
+                //shark.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            //shark.GetComponent<SpriteRenderer>().sprite = shark.GetComponent<SharkHat>().spriteArray[1];
         }
         else if (curstate == 2) {
             if (curSprite >= 4 && curSprite <= 7) {
@@ -111,6 +121,7 @@ public class PlayerController : MonoBehaviour {
                 if (curSprite > 7) curSprite = 4;
             }
             else curSprite = 4;
+            //shark.GetComponent<SpriteRenderer>().sprite = shark.GetComponent<SharkHat>().spriteArray[0];
         }
         else if (curstate == 3) {
             if (curSprite >= 0 && curSprite <= 3) {
@@ -118,6 +129,7 @@ public class PlayerController : MonoBehaviour {
                 if (curSprite > 3) curSprite = 0;
             }
             else curSprite = 0;
+            //shark.GetComponent<SpriteRenderer>().sprite = shark.GetComponent<SharkHat>().spriteArray[2];
         }
         else {
             if (curSprite >= 12 && curSprite <= 14) {
