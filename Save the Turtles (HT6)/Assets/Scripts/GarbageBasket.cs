@@ -6,6 +6,7 @@ public class GarbageBasket : MonoBehaviour {
 
     public int requirement;
     public int curPoints;
+    public List<int> curTrash;
     public GameObject trashGenerator;
 
     // Start is called before the first frame update
@@ -22,6 +23,11 @@ public class GarbageBasket : MonoBehaviour {
         GameObject obj = col.gameObject;
         if (obj.CompareTag("Player")) {
             PlayerController scr = obj.GetComponent<PlayerController>();
+            for (int i = 0; i < scr.trashCount; i++) {
+                curTrash.Add(scr.trashes[i]);
+                NextSceneInfo.trashCan.Add(scr.trashes[i]);
+            }
+            scr.trashes.Clear();
             curPoints += scr.trashCount;
             scr.trashCount = 0;
         }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 370618ae8c84d4cccadc7186972c4e9f
+guid: 2a2dd92d85e07834e8b502cacb12408f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,91 +108,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: backwalkanim_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 209
-        height: 255
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 928ec7c954e1ada41ad62f131997d5cc
-      internalID: -153234324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: backwalkanim_1
-      rect:
-        serializedVersion: 2
-        x: 209
-        y: 0
-        width: 209
-        height: 255
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bae5d69fac313f44a983468a97a397c4
-      internalID: 1823987334
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: backwalkanim_2
-      rect:
-        serializedVersion: 2
-        x: 418
-        y: 0
-        width: 209
-        height: 255
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b80a64bfd1d4f04d9dcac6f82e08c72
-      internalID: -973760750
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: backwalkanim_3
-      rect:
-        serializedVersion: 2
-        x: 627
-        y: 0
-        width: 209
-        height: 255
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f7f167c8ce5f6e40941738a3efa9d61
-      internalID: -512494881
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -203,11 +119,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      backwalkanim_0: -153234324
-      backwalkanim_1: 1823987334
-      backwalkanim_2: -973760750
-      backwalkanim_3: -512494881
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
