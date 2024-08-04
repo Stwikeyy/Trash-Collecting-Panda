@@ -13,20 +13,22 @@ public class FishingGame : MonoBehaviour
     float fishDestination;
 
     float fishTimer;
-    [SerializeField] float timerMultiplicator = 3f;
+    [SerializeField] float timerMultiplicator = 1f;
 
     float fishSpeed;
     [SerializeField] float smoothMotion = 1f;
 
     [SerializeField] Transform hook;
     float hookPosition;
-    [SerializeField] float hookSize = 0.1f;
-    [SerializeField] float hookPower = 0.5f;
-    float hookProgress;
+    float progress;
+    //[SerializeField] float progressGoal = 1f;
+    [SerializeField] float progressPower = 1f;
     float hookPullVelocity;
-    [SerializeField] float hookPullPower = 0.01f;
-    [SerializeField] float hookGravityPower = 0.005f;
-    [SerializeField] float hookProgressDegradationPower = 0.1f;
+    [SerializeField] float hookForce = 1f;
+    [SerializeField] float hookGravityPower = 1f;
+    [SerializeField] float progressDegradationPower = 1f;
+
+    [SerializeField] Transform progressBar;
 
 
     // Start is called before the first frame update
@@ -38,18 +40,44 @@ public class FishingGame : MonoBehaviour
     // Update is called once per frame
     private void Update() {
         Fish();
-        Hook();
+        HookPhysics();
+        HookJump();
+        HookUpdate();
+        ProgressCheck();
     }
 
-    void Hook() {
-        if (Input.GetButtonDown("Jump")) {
-            hookPullVelocity += hookPullPower * Time.deltaTime;
-        }
-        hookPullVelocity -= hookGravityPower * Time.deltaTime;
+    void ProgressCheck() {
+        Vector3 ls = progressBar.localScale;
+        ls.y = progress;
+        progressBar.localScale = ls;
+        print(progressBar.localScale);
 
-        hookPosition += hookPullVelocity;
-        hookPosition = Mathf.Clamp(hookPosition, 0, 1);
-        hook.position = Vector2.Lerp(bottomPivot.position, topPivot.position, hookPosition);
+        if (progress < 1 && Mathf.Abs(hook.position.y - fish.position.y) < 1) {
+            progress += progressPower * Time.deltaTime;
+        } else if (progress > 0) {
+            progress -= progressDegradationPower * Time.deltaTime;
+        }
+    }
+
+    void HookUpdate() {
+        hook.Translate(new Vector3(0, hookPullVelocity, 0) * Time.deltaTime);
+    }
+
+    void HookJump() {
+        if (Input.GetButtonDown("Jump")) {
+            hookPullVelocity = hookForce;
+        }
+    }
+
+    void HookPhysics() {
+        hookPullVelocity -= hookGravityPower;
+        if (hook.position.y < bottomPivot.position.y) {
+            hookPullVelocity = 0;
+            hook.position = new Vector3(hook.position.x, bottomPivot.position.y, hook.position.z); // ensure position
+        } else if (hook.position.y > topPivot.position.y) {
+            hookPullVelocity = 0;
+            hook.position = new Vector3(hook.position.x, topPivot.position.y, hook.position.z); // ensure position
+        }
     }
 
     void Fish()
