@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class SortingPlayer : MonoBehaviour {
 
@@ -22,7 +23,9 @@ public class SortingPlayer : MonoBehaviour {
     // for trashCapacity
     public List<int> trashes;
     public bool holdingTrash = false;
-    public int holdingTrashNum = 0;
+    public GameObject holdingTrashObject;
+    public int sortedCorrect = 0;
+    public Text sortedText;
 
     // Start is called before the first frame update
     void Start() {
@@ -93,13 +96,30 @@ public class SortingPlayer : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Item")) {
             ++trashCount;
-            //trashes.Add(collision.gameObject.getComponent<TrashController>().trashType);
         }
     }
 
     void OnCollisionEnter2D(Collision2D col) {
-        if (col.gameObject.CompareTag("GarbageBasket")) trashCount = 0;
-        if (col.gameObject.CompareTag("UpgradeCenter")) trashCount = 0;
+        if (holdingTrash) {
+            int tNum = holdingTrashObject.GetComponent<SortingTrash>().trashNum;
+            if (col.gameObject.CompareTag("Garbage")) {
+                if (tNum == 1) sortedCorrect++;
+                Destroy(holdingTrashObject);
+                holdingTrash = false;
+            }
+            else if (col.gameObject.CompareTag("Recycle")) {
+                if (tNum == 0 || tNum == 2 || tNum == 4) sortedCorrect++;
+                Destroy(holdingTrashObject);
+                holdingTrash = false;
+            }
+            else if (col.gameObject.CompareTag("Compost")) {
+                if (tNum == 3 || tNum == 5) sortedCorrect++;
+                Destroy(holdingTrashObject);
+                holdingTrash = false;
+            }
+            sortedText.text = "Sorted Correctly: " + sortedCorrect.ToString();
+        }
+        
         //for (int i = 0; i < trashes.Count; i++) print(trashes[i]);
     }
 }
