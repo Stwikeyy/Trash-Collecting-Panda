@@ -13,9 +13,11 @@ public class PlayerController : MonoBehaviour {
 
     // for fishing
     public bool fishing = false;
+    public bool onTheLine = false;
     public float coastline;
     private float fishingTime = 0;
     private float waitTime = 0;
+    public FishingGame fishComponent;
 
     // for sprite rendering
     public Sprite[] spriteArray;
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         spriteRenderer.sprite = newSprite;
+
     }
 
     private void Update() {
@@ -40,23 +43,33 @@ public class PlayerController : MonoBehaviour {
             updateSprite();
             waiting = 0;
         }
-
         // fishing mode
         if (transform.position.x >= coastline) {
-            if (!fishing) { // first instance, throw out line
-                fishingTime = 0;
-                fishing = true;
-                waitTime = 1 + UnityEngine.Random.Range(0.0f, 4.0f); // between 1-5 seconds
-            } else { // fishing for fish
-                fishingTime += Time.deltaTime;
-                if (fishingTime >= waitTime) { // fish is being catched
-                    fishing = false;
-                    print("FISH!");
+            if (!fishing) { // first instance, throw out line 
+                if (!onTheLine) { // Only start fishing if fish isn't on the line
+                    fishingTime = 0;
+                    fishing = true;
+                    waitTime = 1 + UnityEngine.Random.Range(0.0f, 4.0f); // between 1-5 seconds
                 }
             }
-        } else {
+            else { // fishing for fish
+                fishingTime += Time.deltaTime;
+                if (fishingTime >= waitTime) { // fish is being caught
+                    fishing = false;
+                    onTheLine = true;
+                    if (fishComponent != null) fishComponent.unpause();
+                }
+            }
+        }
+        else {
             fishing = false;
+            if (fishComponent != null) fishComponent.pause();
         } // not in fishing mode
+
+        if (fishComponent.isCaught()) {
+            onTheLine = false;
+            fishComponent.pause();
+        }
     }
 
     void updateSpeed() {

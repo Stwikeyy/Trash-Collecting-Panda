@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7560042899698024738, guid: 293059f3ef9e448839560e0ca26d3043, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.22
+      value: -1.48
       objectReference: {fileID: 0}
     - target: {fileID: 7560042899698024738, guid: 293059f3ef9e448839560e0ca26d3043, type: 3}
       propertyPath: m_LocalPosition.y
@@ -209,6 +209,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7560042899698024738, guid: 293059f3ef9e448839560e0ca26d3043, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1743101760}
+    - targetCorrespondingSourceObject: {fileID: 7560042899698024738, guid: 293059f3ef9e448839560e0ca26d3043, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1410332028}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7653492227175468950, guid: 293059f3ef9e448839560e0ca26d3043, type: 3}
       insertIndex: -1
@@ -286,7 +289,9 @@ MonoBehaviour:
   rb2d: {fileID: 314009115}
   trashCount: 0
   fishing: 0
+  onTheLine: 0
   coastline: 0
+  fishComponent: {fileID: 1410332026}
   spriteArray:
   - {fileID: 1127372288, guid: f37e4fadea19c1b4eba6c1e9cace3f34, type: 3}
   - {fileID: 908295097, guid: f37e4fadea19c1b4eba6c1e9cace3f34, type: 3}
@@ -621,13 +626,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881879027}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.65, y: 0.6, z: -0.25}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.9800005, y: 1.96, z: -0.25}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 648230989}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1410332028}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &971100444
 GameObject:
@@ -975,6 +980,8 @@ MonoBehaviour:
   hookGravityPower: 0.025
   progressDegradationPower: 0.5
   progressBar: {fileID: 881879028}
+  paused: 1
+  caught: 0
 --- !u!212 &1410332027
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1017,7 +1024,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1035,8 +1042,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410332025}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.16, y: -0.38, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2, y: 0, z: 1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1046,7 +1053,8 @@ Transform:
   - {fileID: 1208218106}
   - {fileID: 971100445}
   - {fileID: 1790579118}
-  m_Father: {fileID: 0}
+  - {fileID: 881879028}
+  m_Father: {fileID: 314009117}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1641283902
 GameObject:
@@ -7337,5 +7345,3 @@ SceneRoots:
   - {fileID: 846298758}
   - {fileID: 2080826681}
   - {fileID: 21716827}
-  - {fileID: 1410332028}
-  - {fileID: 881879028}

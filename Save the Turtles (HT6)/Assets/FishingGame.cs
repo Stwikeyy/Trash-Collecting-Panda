@@ -30,20 +30,39 @@ public class FishingGame : MonoBehaviour
 
     [SerializeField] Transform progressBar;
 
+    public bool paused = true;
+    private SpriteRenderer objectRenderer;
+    public bool caught = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        objectRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     private void Update() {
-        Fish();
-        HookPhysics();
-        HookJump();
-        HookUpdate();
-        ProgressCheck();
+        if (!paused) {
+            Fish();
+            HookPhysics();
+            HookJump();
+            HookUpdate();
+            ProgressCheck();
+        }
+    }
+
+    public bool isCaught() {
+        return caught;
+    }
+
+    public void unpause() {
+        //objectRenderer.enabled = true;
+        paused = false;
+    }
+
+    public void pause() {
+        //objectRenderer.enabled = false;
+        paused = true;
     }
 
     void ProgressCheck() {
@@ -52,10 +71,16 @@ public class FishingGame : MonoBehaviour
         progressBar.localScale = ls;
         print(progressBar.localScale);
 
-        if (progress < 1 && Mathf.Abs(hook.position.y - fish.position.y) < 1) {
+        if (progress < 2 && Mathf.Abs(hook.position.y - fish.position.y) < 1) {
             progress += progressPower * Time.deltaTime;
         } else if (progress > 0) {
             progress -= progressDegradationPower * Time.deltaTime;
+        }
+
+        if (progress > 2) {
+            caught = true;
+            print("CAUHGT");
+            pause();
         }
     }
 
@@ -92,6 +117,6 @@ public class FishingGame : MonoBehaviour
 
 
         fishPosition = Mathf.SmoothDamp(fishPosition, fishDestination, ref fishSpeed, smoothMotion);
-        fish.position = Vector2.Lerp(bottomPivot.position,topPivot.position, fishPosition);
+        fish.position = Vector2.Lerp(bottomPivot.position, topPivot.position, fishPosition);
     }
 }
