@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 370280236}
   - component: {fileID: 370280238}
   - component: {fileID: 370280237}
-  m_Layer: 1
+  m_Layer: 6
   m_Name: Shark Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
