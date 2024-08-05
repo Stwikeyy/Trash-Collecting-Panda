@@ -20,7 +20,7 @@ public class EndingGame : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col) {
         if (col.gameObject.CompareTag("Player")) {
             if (player.GetComponent<SortingPlayer>().sortedCorrect >= 50) {
-                SceneManager.LoadScene("Ending Scene");
+                SceneManager.LoadScene("Ending Game");
             }
             else {
                 SceneManager.LoadScene("Player Scene");
