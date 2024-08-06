@@ -1,6 +1,8 @@
 # trashpanda
 Made with unity
+
 How to run:
+
 1. clone project and add it to your unity hub
 2. when on the game, change the scene to the start game scene
 3. run the game
