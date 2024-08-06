@@ -4,7 +4,9 @@ How to run:
 1. clone project and add it to your unity hub
 2. when on the game, change the scene to the start game scene
 3. run the game
+
 How to play:
+
 1. use wasd to move
 2. collect trash and put them in the void
 3. you can trade trash to the duck for more trash capacity
